@@ -4,18 +4,6 @@ var $ = require('jquery');
 var Template = require('./temps/template.jsx').Template;
 var RecipeCollection = require('../models/recipe.js').RecipeCollection;
 
-// var IngredientList = React.createClass({
-//   render: function(){
-//     console.log(this.props);
-//     // var ingredientListing = this.props.ingredients.map(function(data){
-//     //   console.log('data', data);
-//     // });
-//     return (
-//       <tr><td>Test</td><td>test</td><td>another test</td></tr>
-//     )
-//   }
-// });
-
 var RecipeList = React.createClass({
   getInitialState: function(){
     return {
@@ -32,10 +20,16 @@ var RecipeList = React.createClass({
     var collection = this.props.collection;
 
     var recipeListing = collection.map(function(data){
-      console.log("text", data.ingredients);
+
+      var ingredientListing = data.ingredients.map(function(ingredient){
+        return (
+          <tr><td>{ingredient.ingredient}</td><td>{ingredient.qty}</td><td>{ingredient.unit}</td></tr>
+        )
+      });
+
       return (
         <div key={data.objectId} className="col-md-4">
-          <div className="text-center">
+          <div className="text-center well">
             <h2>{data.recipeName}</h2>
             <h4>{data.recipeAuthor}</h4>
           </div>
@@ -53,7 +47,7 @@ var RecipeList = React.createClass({
                 </tr>
               </thead>
               <tbody>
-                <tr><td>{data.ingredients.gty}</td></tr>
+                {ingredientListing}
               </tbody>
             </table>
         </div>
