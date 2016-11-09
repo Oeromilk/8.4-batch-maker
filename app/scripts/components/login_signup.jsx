@@ -114,7 +114,6 @@ var HandleUserContainer = React.createClass({
 
     $.get('https://grabow.herokuapp.com/login?username='
       + logInInfo.username + '&password=' + logInInfo.password).then(function(response){
-        console.log(response);
       localStorage.setItem('token', response.sessionToken);
       self.props.router.navigate('recipes/', {trigger: true});
     });

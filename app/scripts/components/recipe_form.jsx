@@ -109,26 +109,26 @@ var RecipeForm = React.createClass({
       'cookTime': this.state.cookTime,
       'cookTemp': this.state.cookTemp,
       'ingredients': [{
-          'qty1': this.state.ingredientQtyone,
-          'unit1': this.state.ingredientUnitone,
-          'ingredient1': this.state.ingredientone
+          "qty": this.state.ingredientQtyone,
+          "unit": this.state.ingredientUnitone,
+          "ingredient": this.state.ingredientone
         }, {
-          'qty2': this.state.ingredientQtytwo,
-          'unit2': this.state.ingredientUnittwo,
-          'ingredient2': this.state.ingredienttwo
+          "qty": this.state.ingredientQtytwo,
+          "unit": this.state.ingredientUnittwo,
+          "ingredient": this.state.ingredienttwo
         }, {
-          'qty3': this.state.ingredientQtythree,
-          'unit3': this.state.ingredientUnitthree,
-          'ingredient3': this.state.ingredientthree
+          "qty": this.state.ingredientQtythree,
+          "unit": this.state.ingredientUnitthree,
+          "ingredient": this.state.ingredientthree
         }, {
-          'qty4': this.state.ingredientQtyfour,
-          'unit4': this.state.ingredientUnitfour,
-          'ingredient4': this.state.ingredientfour
+          "qty": this.state.ingredientQtyfour,
+          "unit": this.state.ingredientUnitfour,
+          "ingredient": this.state.ingredientfour
         }, {
-          'qty5': this.state.ingredientQtyfive,
-          'unit5': this.state.ingredientUnitfive,
-          'ingredient5': this.state.ingredientfive
-      }]
+          "qty": this.state.ingredientQtyfive,
+          "unit": this.state.ingredientUnitfive,
+          "ingredient": this.state.ingredientfive
+        }]
     };
 
     this.props.handleRecipe(recipe);
@@ -200,10 +200,7 @@ var RecipeFormContainer = React.createClass({
     };
   },
   handleRecipe: function(recipe){
-    console.log(recipe);
-    $.post('https://grabow.herokuapp.com/classes/Recipe', recipe).then(function(response){
-      console.log(response);
-    });
+    this.state.collection.create(recipe);
     this.props.router.navigate('recipes/', {trigger: true});
   },
   render: function(){

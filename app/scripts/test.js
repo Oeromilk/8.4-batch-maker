@@ -31,24 +31,25 @@ var recipe = {
   ]
 };
 
+
 module.exports = recipe;
-console.log(recipe.ingredients);
-function adjustRecipe(newServSize){
-  var baseInQty = recipe.ingredients[0].qty / recipe.servingSize;
-  var newInQty = baseInQty * newServSize;
-  recipe.ingredients[0].qty = newInQty;
-  var baseInQty1 = recipe.ingredients[1].qty / recipe.servingSize;
-  var newInQty1 = baseInQty1 * newServSize;
-  recipe.ingredients[1].qty = newInQty1;
-  var baseInQty2 = recipe.ingredients[2].qty / recipe.servingSize;
-  var newInQty2 = baseInQty2 * newServSize;
-  recipe.ingredients[2].qty = newInQty2;
-  var baseInQty3 = recipe.ingredients[3].qty / recipe.servingSize;
-  var newInQty3 = baseInQty3 * newServSize;
-  recipe.ingredients[3].qty = newInQty3;
-  var baseInQty4 = recipe.ingredients[4].qty / recipe.servingSize;
-  var newInQty4 = baseInQty4 * newServSize;
-  recipe.ingredients[4].qty = newInQty4;
-}
-adjustRecipe(1);
-console.log(recipe.ingredients);
+// console.log(recipe.ingredients);
+// function adjustRecipe(newServSize){
+//   var baseInQty = recipe.ingredients[0].qty / recipe.servingSize;
+//   var newInQty = baseInQty * newServSize;
+//   recipe.ingredients[0].qty = newInQty;
+//   var baseInQty1 = recipe.ingredients[1].qty / recipe.servingSize;
+//   var newInQty1 = baseInQty1 * newServSize;
+//   recipe.ingredients[1].qty = newInQty1;
+//   var baseInQty2 = recipe.ingredients[2].qty / recipe.servingSize;
+//   var newInQty2 = baseInQty2 * newServSize;
+//   recipe.ingredients[2].qty = newInQty2;
+//   var baseInQty3 = recipe.ingredients[3].qty / recipe.servingSize;
+//   var newInQty3 = baseInQty3 * newServSize;
+//   recipe.ingredients[3].qty = newInQty3;
+//   var baseInQty4 = recipe.ingredients[4].qty / recipe.servingSize;
+//   var newInQty4 = baseInQty4 * newServSize;
+//   recipe.ingredients[4].qty = newInQty4;
+// }
+// adjustRecipe(1);
+// console.log(recipe.ingredients);

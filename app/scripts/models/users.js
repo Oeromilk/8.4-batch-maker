@@ -7,7 +7,6 @@ var User = Backbone.Model.extend({
     var password = this.get('password');
 
     this.save().then(function(data){
-      console.log(data);
     });
   }
 });
