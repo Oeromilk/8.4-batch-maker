@@ -42,7 +42,7 @@ var RecipeList = React.createClass({
           </div>
             <table className="table table-bordered">
               <thead>
-                <tr><th>{data.servingSize} Servings</th><th>{data.servingType}</th>
+                <tr><th><input value={data.servingSize}/> Servings</th><th>{data.servingType}</th>
                 <td><button className="btn btn-warning">Adjust Recipe</button></td>
                 </tr>
               </thead>
