@@ -94,9 +94,9 @@ $.ajaxSetup({
   beforeSend: function(xhr, token){
     xhr.setRequestHeader("X-Parse-Application-Id", "dalaran");
     xhr.setRequestHeader("X-Parse-REST-API-Key", "stormwind");
-    if(token){
-      xhr.setRequestHeader("X-Parse-Session-Token", token);
-    };  
+    // if(token){
+    //   xhr.setRequestHeader("X-Parse-Session-Token", token);
+    // };
   }
 });
 
@@ -117,6 +117,7 @@ var HandleUserContainer = React.createClass({
     $.get('https://grabow.herokuapp.com/login?username='
       + logInInfo.username + '&password=' + logInInfo.password).then(function(response){
       localStorage.setItem('token', response.sessionToken);
+      console.log("token", token);
       self.props.router.navigate('recipes/', {trigger: true});
     });
   },
