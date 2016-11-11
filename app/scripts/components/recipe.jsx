@@ -16,10 +16,16 @@ var RecipeList = React.createClass({
     });
     this.setState({ingredients: ingredientList});
   },
+  handleAdjustServing: function(e){
+    console.log("supposed to work");
+  },
   render: function(){
     var collection = this.props.collection;
 
+    var self = this;
+
     var recipeListing = collection.map(function(data){
+      var that = self;
 
       var ingredientListing = data.ingredients.map(function(ingredient){
         return (
@@ -42,7 +48,7 @@ var RecipeList = React.createClass({
           </div>
             <table className="table table-bordered">
               <thead>
-                <tr><th><input value={data.servingSize}/> Servings</th><th>{data.servingType}</th>
+                <tr><th><input onChange={that.handleAdjustServing} value={data.servingSize}/> Servings</th><th>{data.servingType}</th>
                 <td><button className="btn btn-warning">Adjust Recipe</button></td>
                 </tr>
               </thead>
