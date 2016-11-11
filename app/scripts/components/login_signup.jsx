@@ -91,10 +91,12 @@ var SignUpForm = React.createClass({
 });
 
 $.ajaxSetup({
-  beforeSend: function(xhr){
+  beforeSend: function(xhr, token){
     xhr.setRequestHeader("X-Parse-Application-Id", "dalaran");
     xhr.setRequestHeader("X-Parse-REST-API-Key", "stormwind");
-    xhr.setRequestHeader("X-Parse-Session-Token", token);
+    if(token){
+      xhr.setRequestHeader("X-Parse-Session-Token", token);
+    };  
   }
 });
 
